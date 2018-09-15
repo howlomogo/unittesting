@@ -7,6 +7,12 @@ class Header extends Component {
     this.changeActive = this.changeActive.bind(this)
     this.multiplyNumber = this.multiplyNumber.bind(this)
     this.testFunction = this.testFunction.bind(this)
+    this.buttonClick1 = this.buttonClick1.bind(this)
+    this.buttonClick2 = this.buttonClick2.bind(this)
+
+    this.state = {
+      numOfClicks: 0
+    }
   }
 
   changeActive() {
@@ -21,6 +27,16 @@ class Header extends Component {
     return foo
   }
 
+  buttonClick1() {
+    // Do something
+  }
+
+  buttonClick2() {
+    this.setState({
+      numOfClicks: this.state.numOfClicks + 1
+    })
+  }
+
   render() {
 
     return (
@@ -28,6 +44,14 @@ class Header extends Component {
         {/* <NavLink />
         <NavLink />
         <NavLink /> */}
+
+        <button className='btn1' onClick={this.buttonClick1}>
+          Click Me!
+        </button>
+
+        <button className='btn2' onClick={this.buttonClick2}>
+          Click Me 2!
+        </button>
 
         <ul className='nav-bar'>
           <li onClick={this.changeActive}>One</li>
